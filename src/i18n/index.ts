@@ -19,6 +19,7 @@ const LOCALE_TEXT_IMPORTS: Record<
   () => Promise<I18N | undefined>
 > = {
   'bd-bn': () => import('./locales/bd-bn').then(m => m.TEXT),
+  'cs-cz': () => import('./locales/cs-cz').then(m => m.TEXT),
   'en-gb': () => import('./locales/en-gb').then(m => m.TEXT),
   'hi-in': () => import('./locales/hi-in').then(m => m.TEXT),
   'id-id': () => import('./locales/id-id').then(m => m.TEXT),
