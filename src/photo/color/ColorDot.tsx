@@ -63,7 +63,11 @@ export default function ColorDot({
   };
 
   const dot = (
-    <button
+    // ColorDot cannot be a button because it's used in a tooltip trigger,
+    // which is also a button
+    // eslint-disable-next-line max-len
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    <div
       className={clsx(
         'link',
         size === 'small' ? 'size-2.5' : 'size-4',
@@ -92,7 +96,7 @@ export default function ColorDot({
           'w-full h-px rotate-135',
           'bg-black/50 dark:bg-white/50',
         )} />}
-    </button>
+    </div>
   );
 
   return includeTooltip
