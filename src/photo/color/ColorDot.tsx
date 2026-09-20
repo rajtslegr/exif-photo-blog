@@ -69,33 +69,41 @@ export default function ColorDot({
     // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
     <div
       className={clsx(
-        'link',
+        'relative',
         size === 'small' ? 'size-2.5' : 'size-4',
-        'rounded-full',
         canCopy && 'cursor-pointer',
-        color
-          ? 'outline outline-white/25'
-          : clsx(
-            'flex items-center justify-center overflow-hidden',
-            'outline',
-            color
-              ? 'outline-medium'
-              : 'outline-black/50 dark:outline-white/50',
-          ),
         className,
       )}
-      style={color
-        ? { backgroundColor: isColorHex
-          ? color
-          : convertOklchToCss(color) }
-        : undefined}
       onClick={canCopy ? onCopy : undefined}
     >
+      {/* Color fill */}
+      <div 
+        className="absolute inset-0 rounded-full"
+        style={color
+          ? { backgroundColor: isColorHex
+            ? color
+            : convertOklchToCss(color) }
+          : undefined}
+      />
+      {/* Color outline */}
+      <div
+        className={clsx(
+          'absolute inset-px rounded-full',
+          'outline',
+          color
+            ? 'outline-black/10 dark:outline-white/20'
+            : 'outline-black/50 dark:outline-white/50',
+        )}
+      />
+      {/* Slash for missing color */}
       {!color &&
-        <div className={clsx(
-          'w-full h-px rotate-135',
-          'bg-black/50 dark:bg-white/50',
-        )} />}
+        <div className="absolute inset-0 overflow-hidden rounded-full">
+          <div className={clsx(
+            'absolute top-[calc(50%-0.5px)] w-[calc(100%-0.5px)]',
+            'h-px rotate-135',
+            'bg-black/50 dark:bg-white/50',
+          )} />
+        </div>}
     </div>
   );
 
