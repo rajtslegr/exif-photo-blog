@@ -15,6 +15,8 @@ export default function PhotosHover({
   header,
   getPhotos,
   photosCount,
+  maxPhotos,
+  gap,
   children,
   className,
   color,
@@ -23,6 +25,8 @@ export default function PhotosHover({
   header: ReactNode
   getPhotos: () => Promise<Photo[]>
   photosCount: number
+  maxPhotos?: number
+  gap?: boolean
   children: ReactNode
   className?: string
   color?: ComponentProps<typeof SharedHover>['color']
@@ -56,6 +60,8 @@ export default function PhotosHover({
       header,
       photos,
       photosCount,
+      maxPhotos,
+      gap,
       className,
       color,
       caption,

@@ -423,6 +423,10 @@ export const MATTE_COLOR_DARK =
   process.env.NEXT_PUBLIC_MATTE_COLOR_DARK;
 export const TINT_FOLDERS =
   process.env.NEXT_PUBLIC_TINT_FOLDERS === '1';
+export const HIGH_DENSITY_PREVIEWS =
+  process.env.NEXT_PUBLIC_HIGH_DENSITY_PREVIEWS === '1';
+export const OG_TEXT_BOTTOM_ALIGNMENT =
+  (process.env.NEXT_PUBLIC_OG_TEXT_ALIGNMENT ?? '').toUpperCase() === 'BOTTOM';
 
 // SETTINGS
 
@@ -436,8 +440,6 @@ export const SOCIAL_NETWORKS = parseSocialKeysFromString(
 );
 export const SITE_FEEDS_ENABLED =
   process.env.NEXT_PUBLIC_SITE_FEEDS === '1';
-export const OG_TEXT_BOTTOM_ALIGNMENT =
-  (process.env.NEXT_PUBLIC_OG_TEXT_ALIGNMENT ?? '').toUpperCase() === 'BOTTOM';
 
 // SCRIPTS & ANALYTICS
 
@@ -586,12 +588,13 @@ export const APP_CONFIGURATION = {
   matteColorDark: MATTE_COLOR_DARK,
   arePhotoTitlesUppercase: UPPERCASE_TITLES,
   areFoldersTinted: TINT_FOLDERS,
+  hasHighDensityPreviews: HIGH_DENSITY_PREVIEWS,
+  isOgTextBottomAligned: OG_TEXT_BOTTOM_ALIGNMENT,
   // Settings
   arePublicDownloadsEnabled: ALLOW_PUBLIC_DOWNLOADS,
   hasSocialKeys: Boolean(process.env.NEXT_PUBLIC_SOCIAL_NETWORKS),
   socialKeys: SOCIAL_NETWORKS,
   areSiteFeedsEnabled: SITE_FEEDS_ENABLED,
-  isOgTextBottomAligned: OG_TEXT_BOTTOM_ALIGNMENT,
   // Scripts & Analytics
   hasPageScriptUrls: PAGE_SCRIPT_URLS.length > 0,
   pageScriptUrls: PAGE_SCRIPT_URLS,
