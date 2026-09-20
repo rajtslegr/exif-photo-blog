@@ -820,7 +820,6 @@ export default function AdminAppConfigurationClient({
           <ChecklistRow
             title="Color sort"
             status={isColorSortEnabled}
-            experimental
             optional
           >
             Set environment variable to {'"1"'} to enable color-based sorting
@@ -834,7 +833,6 @@ export default function AdminAppConfigurationClient({
           <ChecklistRow
             title="Color sort configuration"
             status={hasColorSortConfiguration}
-            experimental
             optional
           >
             Configure which colors start first
