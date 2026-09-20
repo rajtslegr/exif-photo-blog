@@ -36,6 +36,7 @@ export interface EntityLinkExternalProps {
   hoverCount?: number
   hoverType?: 'auto' | 'text' | 'image' | 'none'
   hoverQueryOptions?: PhotoQueryOptions
+  hoverDescription?: string
 }
 
 export default function EntityLink({
@@ -56,6 +57,7 @@ export default function EntityLink({
   hoverCount = 0,
   hoverType = 'auto',
   hoverQueryOptions,
+  hoverDescription,
   prefetch,
   title,
   action,
@@ -207,6 +209,7 @@ export default function EntityLink({
         ? <PhotosHover
           hoverKey={path}
           header={renderLink(true)}
+          description={hoverDescription}
           photosCount={hoverCount}
           maxPhotos={PHOTOS_TO_SHOW_PER_CATEGORY}
           getPhotos={() =>

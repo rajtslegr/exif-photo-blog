@@ -14,6 +14,7 @@ const { width, height } = getDimensionsFromSize(300, 16 / 9);
 export default function EntityHover({
   hoverKey,
   header,
+  description,
   caption,
   photos,
   photosCount,
@@ -25,6 +26,7 @@ export default function EntityHover({
 }: {
   hoverKey: string
   header?: ReactNode
+  description?: string
   caption?: ReactNode
   photos?: Photo[]
   photosCount: number
@@ -121,7 +123,7 @@ export default function EntityHover({
       <div className="absolute inset-0 p-2.5">
         <div className="flex flex-col gap-1 h-full">
           {/* Header */}
-          <div className="grow">
+          <div className="grow min-w-0">
             {header &&
               <span className={clsx(
                 'flex text-base text-white',
@@ -130,6 +132,15 @@ export default function EntityHover({
               )}>
                 {header}
               </span>}
+            {description &&
+              <p className={clsx(
+                'mt-3 mx-1',
+                'text-[0.7rem] leading-snug text-white/80',
+                'text-left text-pretty',
+                'line-clamp-3',
+              )}>
+                {description}
+              </p>}
           </div>
           {/* Caption */}
           {caption &&
@@ -153,6 +164,7 @@ export default function EntityHover({
     photosToShow,
     photos,
     header,
+    description,
     caption,
     gap,
   ]);
