@@ -294,7 +294,9 @@ export default function AdminPhotoMenu({
         }}/>
         <ImageInput
           ref={inputRef}
+          id={`admin-photo-file-${photo.id}`}
           multiple={false}
+          hidden
           onBlobReady={async ({ blob, extension }) =>
             uploadPhotoFromClient(blob, extension)
               .then(updatedStorageUrl =>
