@@ -54,7 +54,7 @@ export default function LibrarySection({
         type="button"
         className={clsx(
           'link w-full',
-          'flex items-center gap-1',
+          'flex items-center gap-1.5',
           'text-[13px] uppercase tracking-wide',
           'text-dim',
           'hover:text-medium group-hover/section:text-medium',
@@ -102,7 +102,7 @@ export default function LibrarySection({
               key={folder.key}
               className={clsx(
                 'w-full h-full',
-                'flex items-center justify-center',
+                'flex items-center',
               )}
             >
               <PhotoFolder
